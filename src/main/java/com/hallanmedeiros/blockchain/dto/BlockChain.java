@@ -2,6 +2,8 @@ package com.hallanmedeiros.blockchain.dto;
 
 import java.util.ArrayList;
 
+import com.google.gson.GsonBuilder;
+
 public class BlockChain {
 
 	private ArrayList<Block> chain;
@@ -49,6 +51,10 @@ public class BlockChain {
 
 	public ArrayList<Block> getChain() {
 		return chain;
+	}
+	
+	public String toJson() {
+		return new GsonBuilder().setPrettyPrinting().create().toJson(this.chain);
 	}
 	
 }
